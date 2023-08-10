@@ -12,10 +12,8 @@ app.use(
   })
 );
 
-// why is the port different on both of these
-
 // 2. start server
-app.listen(1313, function check(error) {
+app.listen(4000, function check(error) {
   if (error) {
     console.log("there is an error in server :(");
   } else {
@@ -27,23 +25,9 @@ app.listen(1313, function check(error) {
 
 // 3. connect to mongoDB
 mongoose.set("strictQuery", false);
-// mongoose.connect(
-//   "mongodb://127.0.0.1:27017/group-project",
-//   {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   },
-//   function checkMongoDBConnection(error) {
-//     if (error) {
-//       console.log("error in mongoDB connection :(");
-//     } else {
-//       console.log("connected to mongoDB :)");
-//     }
-//   }
-// );
 
 mongoose
-  .connect("mongodb://127.0.0.1:27017/incident", {
+  .connect("mongodb://127.0.0.1:27017/group-project", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
