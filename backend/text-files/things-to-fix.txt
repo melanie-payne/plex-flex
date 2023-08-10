@@ -1,9 +1,0 @@
-things to fix per file
-
-server.js
-    1. why is the port different
-    2. fix which database this is supposed to connect to
-    3. which port am i even using
-
-user-service.js
-    1. key
