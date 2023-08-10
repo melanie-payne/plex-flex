@@ -1,0 +1,6 @@
+questions for class
+
+1. what do i do from here
+2. how can i remove the files that i used for .gitignore
+3. was i supposed to manually create the files
+4. can he post the text files with instructions
