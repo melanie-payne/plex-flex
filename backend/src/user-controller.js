@@ -19,7 +19,7 @@ var loginUserInfoController = async (req, res) => {
   try {
     result = await userService.userLoginService(req.body);
     if (result.status) {
-      res.send({ stats: true, message: result.message });
+      res.send({ status: true, message: result.message });
     }
   } catch (error) {
     console.log(error);
@@ -27,4 +27,4 @@ var loginUserInfoController = async (req, res) => {
   }
 };
 
-module.exports = { saveUserInfoController };
+module.exports = { saveUserInfoController, loginUserInfoController };

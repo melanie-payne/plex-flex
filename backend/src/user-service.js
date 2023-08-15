@@ -2,46 +2,42 @@ var userModel = require("./user-model");
 var key = "mystudentsaretalented"; //edit this
 var encryptor = require("simple-encryptor")(key);
 
-module.exports.saveUserInfoService = (userDetails) => {
-  return new Promise(function saveUserInfoFun(resolve, reject) {
+module.exports.saveUserInfoService = async (userDetails) => {
+  try {
     var userModelData = new userModel();
     userModelData.username = userDetails.username;
     userModelData.email = userDetails.email;
 
-    // encrypt password
+    // Encrypt password
     var encryptPassword = encryptor.encrypt(userDetails.password);
-    userModelData = encryptPassword;
+    userModelData.password = encryptPassword;
 
-    userModelData.save(function resultHandle(error, result) {
-      if (error) {
-        reject(true);
-      } else {
-        resolve(true);
-      }
-    });
-  });
+    // Use await to wait for the save operation to complete
+    await userModelData.save();
+
+    return true; // Return a resolved promise if save was successful
+  } catch (error) {
+    console.log(error);
+    throw error; // Rethrow the error to propagate it
+  }
 };
 
-module.exports.userLoginService = (userLoginDetails) => {
-  return new Promise(function userLoginFunctionality(resolve, reject) {
-    userModel.findOne(
-      { email: userLoginDetails.email },
-      function getLoginResult(error, result) {
-        if (error) {
-          reject({ staus: false, message: "invalid data" });
-        } else {
-          if (result != undefined && result != null) {
-            var decryptedPassword = encryptor.decrypt(result.password);
-            if (decryptedPassword == userLoginDetails.password) {
-              resolve({ status: true, message: "user validated successfully" });
-            } else {
-              reject({ status: false, message: "user validated failed" });
-            }
-          } else {
-            reject({ status: false, message: "error in user information" });
-          }
-        }
-      }
-    );
-  });
+module.exports.userLoginService = async (userLoginDetails) => {
+  try {
+    var result = await userModel.findOne({ email: userLoginDetails.email });
+
+    if (!result) {
+      throw new Error("User not found");
+    }
+
+    var decryptedPassword = encryptor.decrypt(result.password);
+    if (decryptedPassword === userLoginDetails.password) {
+      return { status: true, message: "user validated successfully" };
+    } else {
+      throw new Error("Invalid password");
+    }
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 };

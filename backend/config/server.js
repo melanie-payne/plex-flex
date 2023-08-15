@@ -21,8 +21,6 @@ app.listen(4000, function check(error) {
   }
 });
 
-// fix which database this is supposed to connect to
-
 // 3. connect to mongoDB
 mongoose.set("strictQuery", false);
 

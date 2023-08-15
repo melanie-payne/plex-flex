@@ -1,0 +1,74 @@
+/* Reset some basic elements for consistency */
+body,
+h1,
+h2,
+h3,
+p,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+body {
+  background-color: #f9eaf7; /* Light pinkish background */
+  color: #6b517f; /* Darker purple text for contrast */
+  padding: 2rem;
+  line-height: 1.5;
+}
+
+a {
+  color: #915f9c; /* Purple for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #6b517f; /* Darker purple on hover for links */
+}
+
+h1,
+h2,
+h3 {
+  color: #ff85c0; /* Bright pink for headers */
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* Buttons */
+button,
+input[type="submit"] {
+  background-color: #ff85c0; /* Bright pink for buttons */
+  color: #ffffff; /* White text on buttons */
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #ff66b2; /* Slightly darker pink on hover for buttons */
+}
+
+/* For more customization, consider elements like: forms, tables, images, etc. */
