@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var Schema = mongoose.Schema; //what is this line for
+var Schema = mongoose.Schema; // what is this line for
 
 var userSchema = mongoose.Schema(
   {

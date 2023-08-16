@@ -26,7 +26,7 @@ export class LoginComponent {
       .post('http://localhost:4000/users/login', bodyData)
       .subscribe((resultData: any) => {
         if (resultData.status) {
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/request-form');
         } else {
           alert('Incorrect Email or Password');
         }

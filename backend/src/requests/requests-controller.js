@@ -14,17 +14,4 @@ var saveRequestController = async (req, res) => {
   }
 };
 
-// var loginRequestController = async (req, res) => {
-//   var result = null;
-//   try {
-//     result = await requests_service.userRequestService(req.body);
-//     if (result.status) {
-//       res.send({ status: true, message: result.message });
-//     }
-//   } catch (error) {
-//     console.log(error);
-//     res.send({ status: false, message: error.message });
-//   }
-// };
-
 module.exports = { saveRequestController };

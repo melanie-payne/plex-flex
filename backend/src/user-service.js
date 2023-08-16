@@ -1,5 +1,5 @@
 var userModel = require("./user-model");
-var key = "mystudentsaretalented"; //edit this
+var key = "mystudentsaretalented";
 var encryptor = require("simple-encryptor")(key);
 
 module.exports.saveUserInfoService = async (userDetails) => {

@@ -1,6 +1,65 @@
 <app-navbar></app-navbar>
-<!-- <h1>My Application</h1>
-
-<a href="/login">Login</a> <br />
-<a href="/register">Register</a> -->
 <router-outlet></router-outlet>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plex Request Hub</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        text-align: center;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #333;
+      }
+      p {
+        color: #666;
+        margin-top: 10px;
+      }
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #f1c036;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.3s;
+      }
+      .btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Plex Request Hub!</h1>
+      <p>
+        Submit your movie and TV show requests to the Plex server administrator.
+      </p>
+      <p>
+        Have a movie or TV show you want to watch? Just click the button below
+        to submit your request.
+      </p>
+      <a class="btn" href="/register">Register</a>&nbsp;&nbsp;
+      <a class="btn" href="/login">Login</a>
+    </div>
+  </body>
+</html>
